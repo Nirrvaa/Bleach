@@ -166,12 +166,3 @@ window.addEventListener('resize',function() {
   city.styles();
 });
 
-var answers = document.querySelector('.answers_list button');
-var ul = document.querySelector('.answers_list ul');
-answers.addEventListener('click',function() {
-  if (!ul.classList.contains('opened')) {
-    ul.classList.add('opened');
-  } else {
-    ul.classList.remove('opened');
-  }
-});
