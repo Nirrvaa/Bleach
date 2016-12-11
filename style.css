@@ -1,0 +1,263 @@
+#carousel { 
+  perspective: 300px; 
+  font-size:0; 
+  padding: 2rem 0 4rem;
+  overflow: hidden;
+}
+#spinner { 
+  transform-style: preserve-3d; 
+  transform: translateX(20%);
+  height: 30rem; 
+  margin: 0 auto;
+  /*transform-origin: 50% 50% -60rem; */
+  transition: .5s; 
+  
+} 
+#spinner .small-photos {
+  flex-basis: 20%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+#spinner .small-photos input {
+  display: none;
+}
+#spinner .small-photos label {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0.2rem solid #798486;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.5);
+}
+#spinner .small-photos label:hover, #spinner .small-photos input:checked + label {
+  border-color: #fff;
+}
+
+#spinner li figcaption:nth-child(1) {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: left;
+  padding: 0 2rem;
+}
+#spinner li figcaption:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  padding: 0 2rem;
+}
+#carousel ~ button { 
+  color: #fff; 
+  display: block; 
+  text-decoration: none; 
+  font-size: 10rem; 
+  font-weight: 900;
+  transition: .6s color; 
+  position: absolute; 
+  border-bottom: none; 
+  line-height: 0; 
+  top: 50%;
+  border: 0px none;
+  transition: .2s;
+}
+#carousel ~ button:nth-of-type(1) {
+  left: 2.5%;
+}
+#carousel ~ button:nth-of-type(2) {
+  right: 2.5%;
+}
+
+.click {
+  color: #fff;
+}
+#carousel ~ button:hover { 
+  color: #377c57;
+  text-shadow: 0 0 20px #fff;
+  cursor: pointer; 
+}
+.viktorina {
+  background: #e7a458;;
+}
+.viktorina_header {
+  background: rgba(255,255,255,0.3);
+}
+.viktorina_header h1 {
+  text-align: center;
+  padding: 2%;
+  font-size: 3rem;
+  font-family: impact;
+  color: #377c57;
+}
+.viktorina_content {
+  position: relative;
+}
+.city {
+  position: relative;
+}
+
+
+/****************КОНКРЕТНО ПО КАЖДОМУ СЛАЙДУ ****************/
+
+#spinner>li {
+  display: block;
+  width: 60%; 
+  height: 30rem;
+  position: absolute; 
+  background: #798486;
+  border: 1px solid #69394f;
+  font-size: 5rem;
+  text-align: center;
+  vertical-align: baseline;
+  overflow: hidden;
+  color: #fff;
+}
+
+#spinner article {
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+}
+#spinner article>header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  background: rgba(0,0,0,0.5);
+  overflow: hidden;
+  padding: 0.25rem 1rem;
+  transition: 1s;
+  width: 100%;
+  z-index: 2;
+  }
+
+#spinner article header h3 {
+  text-align: left;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+}
+.description {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  word-wrap: break-word;
+  height: 2rem;
+  overflow: hidden;
+  text-align: left;
+  background: rgba(0,0,0,0.5);
+  transition: .5s;
+  cursor: pointer;
+  z-index: 2;
+}
+.description header  h4{
+  font-size: 1.5rem;
+  padding: 0 2rem;
+}
+.description p {
+  font-size: 1rem;
+  text-align: justify;
+  padding: 1rem;
+  height: 10rem;
+  overflow: auto;
+}
+.photos {
+  transform-style: preserve-3d;
+  transition: .5s;
+  position: relative;
+  width: 100%;
+  height: 30rem;
+}
+.photos div {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 30rem;
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.viktorina_answers {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.answers_list button {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.3);
+  padding: 0.5rem;
+  color: #377c57;
+  text-shadow: 0 0 3px #a8f000;
+  font-family: impact;
+  font-size: 2rem;
+  border-radius: 50px 50px 0 0;
+  cursor: pointer;
+  transition: .2s;
+  }
+.answers_list button:hover {
+  color: #fff;
+  text-shadow: 0 0 4px #000;
+}
+
+.answers_list ul {
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  background: rgba(255,255,255,0.3);
+  padding: 0 1rem;
+  height: 0;
+  transition: .5s;
+}
+ .answers_list ul.opened {
+  height: 7rem;
+  padding: 1rem;
+}
+.answers_list ul li {
+  display: block;
+  
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+  font-family: impact;
+  background: #377c57;
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: .2s;
+}
+
+.answers_list ul li:hover {
+  background: #e9c25d;
+  border: 2px solid #fff;
+  box-shadow: 0 0 6px 1px rgba(0,0,0,0.5), inset 0 0 3px 1px rgba(0,0,0,0.5);
+  content: "Ответить";
+}
+.viktorina_navigation {
+  background: rgba(255,255,255,0.3);
+}
+
+.photos div:nth-child(1) {
+  background-image: url(img/112016_010001_1.jpg);
+}
+.photos div:nth-child(2) {
+  background-image: url(img/112016_010001_2.jpg);
+}
+.photos div:nth-child(3) {
+  background-image: url(img/112016_010001_4.jpg);
+}
+
+
+
