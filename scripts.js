@@ -36,10 +36,10 @@ City.prototype.styles = function() {
   
     photos.onmouseup = function(q) {
     if (q.pageY - y > 50) {
-      ang -= (360/photos.children.length); 
+      ang -= (360/photos.children.length) - 0.001; 
      
   } else if (y - q.pageY  > 50) {
-    ang += (360/photos.children.length); 
+    ang += (360/photos.children.length) + - 0.001; 
     
   }  
     photos.style.transform = "rotateX(" + ang + "deg)"; 
@@ -49,25 +49,7 @@ City.prototype.styles = function() {
     
     
   });
-   photos.addEventListener('touchstart', function(e) {
-  var y = e.pageY;
-  
-    photos.ontouchend = function(q) {
-    if (q.pageY - y > 50) {
-      ang -= (360/photos.children.length); 
-     
-  } else if (y - q.pageY  > 50) {
-    ang += (360/photos.children.length); 
-    
-  }  
-    photos.style.transform = "rotateX(" + ang + "deg)"; 
-  }
-   
-    
-    
-    
-  },false);  
-    /*
+       /*
   photos.addEventListener('mouseup', function(e) {
     var y = e.pageY;
     console.log(y);
@@ -84,7 +66,7 @@ City.prototype.styles = function() {
   
   
   var angle = 0;
-  var width = 540;
+  //var width = 540;
   function galleryspin(sign) { 
   if (!sign) { angle += 360/list.length; } else { angle -=360/list.length; }
   self.wrapper.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg) translatex(20%); -moz-transform: rotateY("+ angle +"deg) translatex(20%); transform: rotateY("+ angle +"deg) translatex(20%); transform-origin: 50% 50% -"  + Ztranslate + "px;");
