@@ -1,6 +1,6 @@
 var databaseArray = [
   {
-    cityName:'Уфа',
+    cityName:'уф',
     cityContent:[
     {
     memorialName: 'Памятник Салавату Юлаеву',
