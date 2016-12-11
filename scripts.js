@@ -39,7 +39,7 @@ City.prototype.styles = function() {
       ang -= (360/photos.children.length) - 0.001; 
      
   } else if (y - q.pageY  > 50) {
-    ang += (360/photos.children.length) + - 0.001; 
+    ang += (360/photos.children.length) + 0.001; 
     
   }  
     photos.style.transform = "rotateX(" + ang + "deg)"; 
@@ -129,13 +129,16 @@ Memorial.prototype.makeItem = function(item) {
   section.appendChild(this.makingElementsAndClasses({element:'p',content:this.description}));
   article.appendChild(section);
   var photos = this.makingElementsAndClasses({element:'section',classes:['photos']});  
- 
+  var scrollBar = this.makingElementsAndClasses({element:'section',classes:['scroll-bar']}); 
   this.photos.forEach(function(it,i) {
+    scrollBar.appendChild(self.makingElementsAndClasses({element:'input',attributes: {type: "radio", name: self.id, id: self.id + i}}));
+    scrollBar.appendChild(self.makingElementsAndClasses({element:'label',attributes: {for: self.id + i}}));
     var item = self.makingElementsAndClasses({element:'div'});
     item.style.backgroundImage = 'url('+ it +')';
     photos.appendChild(item);
   });
- article.appendChild(photos);     
+ article.appendChild(photos);
+article.appendChild(scrollBar);  
       
   li.appendChild(article);    
   
